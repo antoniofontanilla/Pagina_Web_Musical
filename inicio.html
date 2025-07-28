@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo Musical | Fonta</title>
+  <link rel="stylesheet" href="styleInicio.css" />
+</head>
+<body class="catalogo-body">
+
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="https://www.instagram.com/fontamusicc" target="_blank" rel="noopener">Instragram</a></li>
+      <li><a href="https://www.youtube.com/channel/UCaTKAGmdIzy6TlNgHejJZSg" target="_blank" rel="noopener">Youtube</a></li>
+      <li><a href="quienEsFonta.html">Quién es Fonta</a></li>
+
+    </ul>
+  </nav>
+  <!-- Selector de tamaño -->
+<div class="selector-tamano">
+  <label for="tamano">Tamaño de tarjetas:</label>
+  <select id="tamano" onchange="ajustarTamanos()">
+    <option value="pequeno">Pequeño</option>
+    <option value="mediano" selected>Mediano</option>
+    <option value="grande">Grande</option>
+  </select>
+</div>
+
+
+  <div class="catalogo-container">
+    <h1 class="catalogo-titulo">Catálogo de Fonta</h1>
+
+    <div class="canciones-grid">
+
+      <!-- Tarjeta de canción 1 -->
+      <div class="cancion-card">
+        <img src="noAndaSola.jpg" alt="No Anda Sola" class="portada" />
+        <h2>No Anda Sola</h2>
+        <p>Duración: 2:54</p>
+        <audio controls>
+          <source src="noandasola.wav" type="audio/wav" />
+          Tu navegador no soporta el audio.
+        </audio>
+      </div>
+      
+      <!-- Tarjeta de canción 2 -->
+      <div class="cancion-card">
+        <img src="COVER_BOOTY_SPORT.jpg" alt="Tu Bebes" class="portada" />
+        <h2>Booty Sport</h2>
+        <p>Duración: 3:10</p>
+        <audio controls>
+          <source src="Booty Sport - Fonta Music Ft Dy.izak(spoty).wav" type="audio/wav" />
+          Tu navegador no soporta el audio.
+        </audio>
+      </div>
+       <div class="cancion-card">
+        <img src="Esa chapa cover.jpg" alt="No Anda Sola" class="portada" />
+        <h2>Esa Chapa</h2>
+        <p>Duración: 2:54</p>
+        <audio controls>
+          <source src="Esa Chapa - Fonta Music(spoty).wav" type="audio/wav" />
+          Tu navegador no soporta el audio.
+        </audio>
+      </div>
+      
+
+      <!-- Aquí puedes seguir agregando más canciones -->
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  function ajustarTamanos() {
+    const seleccion = document.getElementById('tamano').value;
+    const tarjetas = document.querySelectorAll('.cancion-card');
+    tarjetas.forEach(card => {
+      card.classList.remove('tamano-pequeno', 'tamano-mediano', 'tamano-grande');
+      card.classList.add(`tamano-${seleccion}`);
+    });
+  }
+</script>
